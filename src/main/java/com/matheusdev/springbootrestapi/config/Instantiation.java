@@ -10,22 +10,22 @@ import com.matheusdev.springbootrestapi.entitties.User;
 import com.matheusdev.springbootrestapi.repository.UserRepository;
 
 @Configuration
-public class Instantiation implements CommandLineRunner{
+public class Instantiation implements CommandLineRunner {
 
 	@Autowired
-	private UserRepository repository;
-	
+	private UserRepository userRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
-		
-		repository.deleteAll();
-		
+
+		userRepository.deleteAll();
+
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
-		
-		repository.saveAll(Arrays.asList(maria, alex, bob));
-		
+
+		userRepository.saveAll(Arrays.asList(maria, alex, bob));
+
 	}
 
 }
