@@ -25,4 +25,8 @@ public class PostService {
 	public List<Post> findByTitle(String text) {
 		return repository.searchTitle(text);
 	}
+	
+	public List<Post> fullSearch(String text){
+		return repository.fullSearch(text);
+	}
 } 
